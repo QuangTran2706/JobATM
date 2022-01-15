@@ -26,7 +26,7 @@
 		<dependency>
 			<groupId>com.google.zxing</groupId>
 			<artifactId>core</artifactId>
-			<version>3.4.0</version>
+			<version>3.4.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.kenglxn.qrgen</groupId>
@@ -37,7 +37,7 @@
 		<dependency>
 			<groupId>com.google.zxing</groupId>
 			<artifactId>javase</artifactId>
-			<version>3.4.0</version>
+			<version>3.4.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -71,7 +71,7 @@
 		<dependency>
 			<groupId>org.modelmapper</groupId>
 			<artifactId>modelmapper</artifactId>
-			<version>2.4.4</version>
+			<version>2.4.5</version>
 		</dependency>
 
 		<dependency>
@@ -87,7 +87,7 @@
 		<dependency>
 			<groupId>jakarta.validation</groupId>
 			<artifactId>jakarta.validation-api</artifactId>
-			<version>2.0.2</version>
+			<version>3.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.jayway.jsonpath</groupId>
@@ -96,7 +96,7 @@
 		<dependency>
 			<groupId>org.hibernate.validator</groupId>
 			<artifactId>hibernate-validator</artifactId>
-			<version>6.1.6.Final</version>
+			<version>7.0.1.Final</version>
 		</dependency>
 	</dependencies>
 

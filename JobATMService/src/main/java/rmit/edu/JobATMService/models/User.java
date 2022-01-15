@@ -5,9 +5,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -27,17 +24,10 @@ public class User {
     @SequenceGenerator(name = "product_id_seq", sequenceName = "product_id_seq", initialValue = 1, allocationSize = 1)
     private Long id;
 
-    @NotBlank
-    @Size(max = 30)
     private String username;
 
-    @NotBlank
-    @Size(max = 50)
-    @Email
     private String email;
 
-    @NotBlank
-    @Size(max = 120)
     private String password;
 
     @ManyToMany(fetch = FetchType.LAZY)
