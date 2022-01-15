@@ -66,32 +66,33 @@ class App extends Component {
             Job ATM
           </Link>
           <div className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <Link to={"/home"} className="nav-link">
-                Home
-              </Link>
-            </li>
-
             {showEmployerPage && (
               <li className="nav-item">
-                <Link to={"/mod"} className="nav-link">
-                  Moderator Board
+                <Link to={"/employer"} className="nav-link">
+                  Employer View
                 </Link>
               </li>
             )}
 
             {showAdminPage && (
-              <li className="nav-item">
-                <Link to={"/admin"} className="nav-link">
-                  Admin Board
-                </Link>
-              </li>
+              <div>
+                <li className="nav-item">
+                  <Link to={"/admin"} className="nav-link">
+                    Admin Board
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link to={"/employer"} className="nav-link">
+                    Employer View
+                  </Link>
+                </li>
+              </div>
             )}
 
             {currentUser && (
               <li className="nav-item">
-                <Link to={"/user"} className="nav-link">
-                  User
+                <Link to={"/employee"} className="nav-link">
+                  Employee View
                 </Link>
               </li>
             )}

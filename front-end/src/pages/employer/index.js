@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import UserService from "../../services/user-service";
 import EventBus from "../../common/EventBus";
-
+import JobTable from "../../components/jobTable"
 export default class HomeEmployer extends Component {
   constructor(props) {
     super(props);
@@ -13,35 +13,15 @@ export default class HomeEmployer extends Component {
   }
 
   componentDidMount() {
-    UserService.getModeratorBoard().then(
-      response => {
-        this.setState({
-          content: response.data
-        });
-      },
-      error => {
-        this.setState({
-          content:
-            (error.response &&
-              error.response.data &&
-              error.response.data.message) ||
-            error.message ||
-            error.toString()
-        });
-
-        if (error.response && error.response.status === 401) {
-          EventBus.dispatch("logout");
-        }
-      }
-    );
   }
 
   render() {
     return (
       <div className="container">
         <header className="jumbotron">
-          <h3>{this.state.content}</h3>
+          <h3>Hello Employer</h3>
         </header>
+        <JobTable/>
       </div>
     );
   }

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import UserService from "../../services/user-service";
 import EventBus from "../../common/EventBus";
-
+import JobView from "../../components/jobView";
 export default class HomeEmployee extends Component {
   constructor(props) {
     super(props);
@@ -13,35 +13,16 @@ export default class HomeEmployee extends Component {
   }
 
   componentDidMount() {
-    UserService.getUserBoard().then(
-      response => {
-        this.setState({
-          content: response.data
-        });
-      },
-      error => {
-        this.setState({
-          content:
-            (error.response &&
-              error.response.data &&
-              error.response.data.message) ||
-            error.message ||
-            error.toString()
-        });
-
-        if (error.response && error.response.status === 401) {
-          EventBus.dispatch("logout");
-        }
-      }
-    );
+    
   }
 
   render() {
     return (
       <div className="container">
         <header className="jumbotron">
-          <h3>{this.state.content}</h3>
+            Hello employee
         </header>
+        <JobView/>
       </div>
     );
   }

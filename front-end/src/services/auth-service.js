@@ -7,9 +7,9 @@ class AuthService {
     return axios
       .post(API_URL + "signin", {
         username,
-        password
+        password,
       })
-      .then(response => {
+      .then((response) => {
         if (response.data.accessToken) {
           localStorage.setItem("user", JSON.stringify(response.data));
         }
@@ -23,16 +23,41 @@ class AuthService {
   }
 
   register(username, email, password, role) {
-    return axios.post(API_URL + "signup", {
-      "username": username,
-      'email': email,
-      'password': password,
-      'role': [role]
+    var payload = {
+      username: username,
+      email: email,
+      password: password,
+      role: ["employee"],
+    };
+    console.log(role);
+    if (role === "admin") {
+      payload = {
+        username: username,
+        email: email,
+        password: password,
+        role: ["admin"],
+      };
+    }
+
+    if (role === "employer") {
+      payload = {
+        username: username,
+        email: email,
+        password: password,
+        role: ["employer"],
+      };
+    }
+    console.log(payload);
+    return axios.post(API_URL + "signup", JSON.stringify(payload), {
+      headers: {
+        // Overwrite Axios's automatically set Content-Type
+        "Content-Type": "application/json",
+      },
     });
   }
 
   getCurrentUser() {
-    return JSON.parse(localStorage.getItem('user'));;
+    return JSON.parse(localStorage.getItem("user"));
   }
 }
 

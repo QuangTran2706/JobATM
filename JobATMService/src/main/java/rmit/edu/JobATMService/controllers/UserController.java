@@ -23,13 +23,18 @@ public class UserController {
         return ResponseEntity.ok(userService.findAll());
     }
 
+    @GetMapping("/getUserById/{id}")
+    public ResponseEntity<User> getUserById(@PathVariable(value = "id") Long id){
+        return ResponseEntity.ok(userService.findUserById(id));
+    }
+
     @PostMapping("/update")
     public ResponseEntity<User> updateUser (@RequestBody UserRequest userRequest) {
         return ResponseEntity.ok(userService.save(userRequest));
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<List<User>> deletePerfume(@PathVariable(value = "id") Long id) {
+    public ResponseEntity<List<User>> deleteUser(@PathVariable(value = "id") Long id) {
         return ResponseEntity.ok(userService.deleteUser(id));
     }
 

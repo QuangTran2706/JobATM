@@ -185,21 +185,16 @@ export default class SignUp extends Component {
                     validations={[required, vpassword]}
                   />
                 </div>
-                <div>
-                  <label>Role</label>
-                  <br />
-                  <select
-                    id="role"
-                    onChange={this.onChangeRoles}
+                
+                <div className="form-group">
+                  <label htmlFor="role">Role</label>
+                  <Input
+                    type="text"
+                    className="form-control"
                     value={this.state.role}
-                    title="Set Role"
-                  >
-                    <option value="admin">Admin</option>
-                    <option value="employee">Employee</option>
-                    <option value="employer">Employer</option>
-                  </select>
-                  <p></p>
-                  <p>{this.state.role}</p>
+                    onChange={this.onChangeRoles}
+                    validations={[required]}
+                  />
                 </div>
 
                 <div className="form-group">
